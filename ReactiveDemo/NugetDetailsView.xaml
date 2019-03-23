@@ -1,0 +1,40 @@
+﻿<reactiveui:ReactiveUserControl
+    x:Class="ReactiveDemo.NugetDetailsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ReactiveDemo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:reactiveui="http://reactiveui.net"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    x:TypeArguments="local:NugetDetailsViewModel"
+    mc:Ignorable="d">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Image
+            x:Name="iconImage"
+            Width="64"
+            Height="64"
+            Margin="6"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" />
+        <TextBlock
+            Grid.Column="1"
+            Margin="6"
+            VerticalAlignment="Center"
+            TextWrapping="WrapWithOverflow">
+            <Run
+                x:Name="titleRun"
+                FontSize="14"
+                FontWeight="SemiBold" />
+            <LineBreak />
+            <Run x:Name="descriptionRun" FontSize="12" />
+            <LineBreak />
+            <Hyperlink x:Name="openButton">Open</Hyperlink>
+        </TextBlock>
+    </Grid>
+</reactiveui:ReactiveUserControl>
